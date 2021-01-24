@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace Gombka.pl.Models.Entities
 {
-    public class UserEntity
+    public class CategoryEntity
     {
         public int Id { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
+        public string Name { get; set; }
         public List<VideoEntity> Videos { get; set; }
-        public List<VoteEntity> Votes { get; set; }
     }
 }
