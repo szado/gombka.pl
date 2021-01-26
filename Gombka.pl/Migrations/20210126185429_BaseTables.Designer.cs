@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Gombka.pl.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210124130300_BaseTables")]
+    [Migration("20210126185429_BaseTables")]
     partial class BaseTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,17 +101,12 @@ namespace Gombka.pl.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VideoEntityId")
-                        .HasColumnType("int");
-
                     b.Property<int>("VideoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("VideoEntityId");
 
                     b.HasIndex("VideoId");
 
@@ -141,15 +136,10 @@ namespace Gombka.pl.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Gombka.pl.Models.Entities.VideoEntity", null)
-                        .WithMany()
-                        .HasForeignKey("VideoEntityId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
                     b.HasOne("Gombka.pl.Models.Entities.VideoEntity", "Video")
                         .WithMany("Votes")
                         .HasForeignKey("VideoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

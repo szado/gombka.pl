@@ -72,8 +72,7 @@ namespace Gombka.pl.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<int>(nullable: false),
                     VideoId = table.Column<int>(nullable: false),
-                    Type = table.Column<int>(nullable: false),
-                    VideoEntityId = table.Column<int>(nullable: true)
+                    Type = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -85,16 +84,10 @@ namespace Gombka.pl.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Votes_Videos_VideoEntityId",
-                        column: x => x.VideoEntityId,
-                        principalTable: "Videos",
-                        principalColumn: "Id");
-                    table.ForeignKey(
                         name: "FK_Votes_Videos_VideoId",
                         column: x => x.VideoId,
                         principalTable: "Videos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -111,11 +104,6 @@ namespace Gombka.pl.Migrations
                 name: "IX_Votes_UserId",
                 table: "Votes",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Votes_VideoEntityId",
-                table: "Votes",
-                column: "VideoEntityId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Votes_VideoId",

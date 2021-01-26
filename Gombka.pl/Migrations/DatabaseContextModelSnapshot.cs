@@ -99,17 +99,12 @@ namespace Gombka.pl.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("VideoEntityId")
-                        .HasColumnType("int");
-
                     b.Property<int>("VideoId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
-
-                    b.HasIndex("VideoEntityId");
 
                     b.HasIndex("VideoId");
 
@@ -139,15 +134,10 @@ namespace Gombka.pl.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Gombka.pl.Models.Entities.VideoEntity", null)
-                        .WithMany()
-                        .HasForeignKey("VideoEntityId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
                     b.HasOne("Gombka.pl.Models.Entities.VideoEntity", "Video")
                         .WithMany("Votes")
                         .HasForeignKey("VideoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

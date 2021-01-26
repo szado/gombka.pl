@@ -12,8 +12,8 @@ namespace Gombka.pl.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<VoteEntity>()
-                .HasOne<VideoEntity>()
-                .WithMany()
+                .HasOne<VideoEntity>("Video")
+                .WithMany("Votes")
                 .OnDelete(DeleteBehavior.NoAction);
         }
 
