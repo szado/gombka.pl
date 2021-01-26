@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Gombka.pl.Models;
-using System.Linq;
+using Gombka.pl.Models.Entities;
+using Gombka.pl.Data;
+using System;
 
 namespace Gombka.pl.Controllers
 {
     public class UsersController : Controller
     {
-        private const int PASSWORD_LENGTH_MIN = 8;
-        private const int PASSWORD_LENGTH_MAX = 32;
-        private const int LOGIN_LENGTH_MIN = 3;
-        private const int LOGIN_LENGTH_MAX = 16;
+        private readonly DatabaseContext _dbContext;
+
+        public UsersController(DatabaseContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
         // GET: UsersController
         [Route("users/login")]
@@ -22,52 +25,14 @@ namespace Gombka.pl.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("users/login")]
-        public ActionResult Authenticate([FromForm] LoginModel form)
+        public ActionResult Authenticate(UserEntity user)
         {
-            if (!PasswordVerify(form.Password) || !LoginVerify(form.Login))
+            if (!ModelState.IsValid)
             {
-                return View("Index", form);
+                return View("Index", user);
             }
 
             return RedirectToAction("Index", "Home");
-        }
-
-        protected bool PasswordVerify(string password)
-        {
-            if (password.Length < PASSWORD_LENGTH_MIN || password.Length > PASSWORD_LENGTH_MAX)
-            {
-                return false;
-            }
-
-            if (password.Any(char.IsWhiteSpace))
-            {
-                return false;
-            }
-
-            // temporary to check if hashing is properly done
-            string hash = BCrypt.Net.BCrypt.HashPassword(password);
-
-            if (!BCrypt.Net.BCrypt.Verify(password, hash))
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        protected bool LoginVerify(string login)
-        {
-            if (login.Length < LOGIN_LENGTH_MIN || login.Length > LOGIN_LENGTH_MAX)
-            {
-                return false;
-            }
-
-            if (!login.All(char.IsLetterOrDigit))
-            {
-                return false;
-            }
-
-            return true;
         }
 
         // GET: UsersController/Details/5
@@ -76,30 +41,44 @@ namespace Gombka.pl.Controllers
             return View();
         }
 
-        [Route("users/register")]
+
         // GET: UsersController/Create
-        public ActionResult Create()
+        [Route("users/register")]
+        public ActionResult Register()
         {
-            return View();
+            return View("Create");
         }
 
         // POST: UsersController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [Route("users/register")]
+        public ActionResult Create(UserEntity user)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Create", user);
+            }
+
             try
             {
-                return RedirectToAction(nameof(Index));
+                user.Password = HashPassword(user.Password);
+
+                _dbContext.Users.Add(user);
+                _dbContext.SaveChanges();
+
+                return RedirectToAction("Index", "Home");
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                ModelState.AddModelError(string.Empty, "Coś poszło nie tak, spróbuj ponownie.");
+
+                return View("Create", user);
             }
         }
 
-        [Route("users/account")]
         // GET: UsersController/Edit/5
+        [Route("users/account")]
         public ActionResult Edit(int id)
         {
             return View();
@@ -140,5 +119,16 @@ namespace Gombka.pl.Controllers
                 return View();
             }
         }
+
+        protected string HashPassword(string password)
+        {
+            // temporary to check if hashing is properly done
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+
+        //        if (!BCrypt.Net.BCrypt.Verify(password, hash))
+        //{
+        //    return false;
+        //}
     }
 }
