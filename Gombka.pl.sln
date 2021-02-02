@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30523.141
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gombka.pl", "Gombka.pl\Gombka.pl.csproj", "{2ACAD2B6-01E2-4E6E-80F4-7245A9C5D4F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gombka.pl", "Gombka.pl\Gombka.pl.csproj", "{00C25304-4E89-40A6-A501-BEBA187C8192}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2ACAD2B6-01E2-4E6E-80F4-7245A9C5D4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2ACAD2B6-01E2-4E6E-80F4-7245A9C5D4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2ACAD2B6-01E2-4E6E-80F4-7245A9C5D4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2ACAD2B6-01E2-4E6E-80F4-7245A9C5D4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00C25304-4E89-40A6-A501-BEBA187C8192}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00C25304-4E89-40A6-A501-BEBA187C8192}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00C25304-4E89-40A6-A501-BEBA187C8192}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00C25304-4E89-40A6-A501-BEBA187C8192}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E75A7174-C397-4B29-A6DA-8C95395D1B58}
+		SolutionGuid = {D597BFE3-6193-49BA-80BA-FBFDF8BEE24D}
 	EndGlobalSection
 EndGlobal

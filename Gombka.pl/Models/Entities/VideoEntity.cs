@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Gombka.pl.Models.Entities
 {
     public class VideoEntity
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
-        public UserEntity User { get; set; }
+        public string UserId { get; set; }
+        public IdentityUser User { get; set; }
         public int CategoryId { get; set; }
         public CategoryEntity Category { get; set; }
         public string Title { get; set; }
