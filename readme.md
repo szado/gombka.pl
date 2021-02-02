@@ -1,7 +1,7 @@
 # Gombka.pl
-Portal umo¿liwiaj¹cy proste udostêpnianie wideo w internecie.
+Portal umoÅ¼liwiajÄ…cy proste udostÄ™pnianie wideo w internecie.
 
 ## Instalacja
-- utwórz now¹ bazê danych na SqlServer i zmodyfikuj odpowiednio appsettings.json (domyœlna instancja to "dev", baza "gombkadb")
+- utwÃ³rz nowÄ… bazÄ™ danych na SqlServer i zmodyfikuj odpowiednio appsettings.json (domyÅ›lna instancja to "dev", baza "Gombkapl")
 - `dotnet tool install --global dotnet-ef` (za pierwszym razem)
 - `dotnet ef database update` (wykonanie migracji)
