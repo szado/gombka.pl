@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Gombka.pl.Models.UploadViewModel
+
+<strong>@ViewData["message"]</strong>
+
+<form asp-controller="Videos" asp-action="Upload" method="post" enctype="multipart/form-data">
+    <div>
+        Tytuł filmu:
+        <input type="text" name="Title" />
+    </div>
+    <div>
+        Opis filmu:
+        <textarea name="Description"></textarea>
+    </div>
+    <div>
+        Kategoria:
+        <select name="CategoryId">
+            @foreach (var category in Model.Categories)
+            {
+                <option value="@category.Id">@category.Name</option>
+            }
+        </select>
+    </div>
+    <div>
+        Wybierz plik:
+        <input type="file" name="File">
+    </div>
+    <button type="submit">Dodaj film</button>
+</form>

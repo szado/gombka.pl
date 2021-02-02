@@ -18,5 +18,6 @@ namespace Gombka.pl.Models.Entities
         public DateTime UploadedAt { get; set; }
         public int ViewsCounter { get; set; }
         public List<VoteEntity> Votes { get; set; }
+        public string FileName { get; set; }
     }
 }
