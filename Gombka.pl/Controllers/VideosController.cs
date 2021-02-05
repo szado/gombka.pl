@@ -16,12 +16,12 @@ namespace Gombka.pl.Controllers
     public class VideosController : Controller
     {
         private readonly ApplicationDbContext DbContext;
-        private readonly IConfiguration Configuration;
+        private readonly Config Config;
 
-        public VideosController(ApplicationDbContext applicationDbContext, IConfiguration configuration)
+        public VideosController(ApplicationDbContext applicationDbContext, Config config)
         {
             DbContext = applicationDbContext;
-            Configuration = configuration;
+            Config = config;
         }
 
         public IActionResult Index()
@@ -46,14 +46,20 @@ namespace Gombka.pl.Controllers
                 return Upload();
             }
 
-            if (file.Length == 0 || file.Length > 100_000_000)
+            if (file.Length == 0 || file.Length > Config.VideoMaxBytes)
             {
-                ViewData["message"] = "Nieprawidłowy rozmiar pliku. Maksymalna wielkość to 100 MB.";
+                ViewData["message"] = $"Nieprawidłowy rozmiar pliku. Maksymalna wielkość to {Config.VideoMaxMb} MB.";
+                return Upload();
+            }
+
+            if (!Config.AllowedVideoMimeTypes.Contains(file.ContentType))
+            {
+                ViewData["message"] = $"Nieobsługiwany typ pliku ({file.ContentType}).";
                 return Upload();
             }
 
             var fileName = Path.GetRandomFileName();
-            var filePath = Path.Combine(Configuration["StoredFilesPath"], fileName);
+            var filePath = Path.Combine(Config.Parsed["Videos:StoredFilesPath"], fileName);
             using (var stream = System.IO.File.Create(filePath))
             {
                 file.CopyTo(stream);
@@ -61,14 +67,28 @@ namespace Gombka.pl.Controllers
 
             video.UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
             video.FileName = fileName;
+            video.MimeType = file.ContentType;
             DbContext.Videos.Add(video);
             DbContext.SaveChanges();
-            return RedirectToAction("Watch", new { videoId = video.Id });
+            return RedirectToAction("Watch", new { id = video.Id });
         }
 
-        public IActionResult Watch(int videoId)
+        public IActionResult Watch(int id)
         {
-            return Json($"odtwarzanie filmu {videoId}");
+            return Content($"<video src='/videos/stream/{id}' controls='controls'></video>", "text/html");
+        }
+
+        public IActionResult Stream(int id)
+        {
+            var video = DbContext.Videos.Find(id);
+
+            if (video == null)
+            {
+                return NotFound();
+            }
+
+            var filePath = Path.Combine(Config.Parsed["Videos:StoredFilesPath"], video.FileName);
+            return PhysicalFile(filePath, video.MimeType);
         }
     }
 }

@@ -1,4 +1,5 @@
 using Gombka.pl.Data;
+using Gombka.pl.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -36,6 +37,7 @@ namespace Gombka.pl
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddSingleton(new Config(Configuration));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
