@@ -1,4 +1,25 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿class App {
+    handleSearch() {
+        const searchForm = document.querySelector('form#search-form');
 
-// Write your JavaScript code.
+        if (!searchForm) {
+            return;
+        }
+
+        searchForm.addEventListener('submit', (e) => {
+            const querySearch = document.querySelector('input#query-search');
+
+            if (!querySearch.value) {
+                e.preventDefault();
+            }
+
+        });
+    }
+
+    init() {
+        this.handleSearch();
+    }
+}
+
+const app = new App;
+app.init();

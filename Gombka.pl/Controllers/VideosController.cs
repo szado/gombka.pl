@@ -116,5 +116,19 @@ namespace Gombka.pl.Controllers
             var filePath = Path.Combine(Config.Parsed["Videos:StoredThumbnailsPath"], video.ThumbnailFileName);
             return PhysicalFile(filePath, video.ThumbnailMimeType);
         }
+
+        public IActionResult Search(string query)
+        {
+            if (query == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            var videos = DbContext.Videos
+                .Where(x => x.Title.Contains(query))
+                .ToList();
+
+            return View(videos);
+        }
     }
 }
