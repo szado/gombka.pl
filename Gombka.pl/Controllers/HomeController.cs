@@ -6,21 +6,29 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Gombka.pl.Data;
 
 namespace Gombka.pl.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext DbContext;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext dbContext)
         {
             _logger = logger;
+            DbContext = dbContext;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var videos = DbContext.Videos
+                .OrderByDescending(x => x.UploadedAt)
+                .Take(10)
+                .ToList();
+
+            return View(videos);
         }
 
         public IActionResult Privacy()
