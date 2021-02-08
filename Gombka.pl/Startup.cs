@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Gombka.pl.Helpers;
 
 namespace Gombka.pl
 {
@@ -38,6 +39,7 @@ namespace Gombka.pl
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddSingleton(new Config(Configuration));
+            services.AddTransient<FFMPEGHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

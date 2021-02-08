@@ -37,7 +37,17 @@ namespace Gombka.pl.Models
 
         public string[] AllowedVideoMimeTypes
         {
-            get => this.Parsed.GetSection("Videos:AllowedContentTypes").Get<string[]>();
+            get => Parsed.GetSection("Videos:AllowedContentTypes").Get<string[]>();
+        }
+
+        public string FFMPEGExecutablePath
+        {
+            get => Parsed.GetSection("Videos:FFMPEGExecutablePath").Get<string>();
+        }
+
+        public string StoredThumbnailsPath
+        {
+            get => Parsed.GetSection("Videos:StoredThumbnailsPath").Get<string>();
         }
     }
 }

@@ -9,7 +9,8 @@ using Gombka.pl.Models.Entities;
 using Gombka.pl.Data;
 using System.Security.Claims;
 using System.IO;
-using Microsoft.Extensions.Configuration;
+using Gombka.pl.Helpers;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Gombka.pl.Controllers
 {
@@ -17,11 +18,13 @@ namespace Gombka.pl.Controllers
     {
         private readonly ApplicationDbContext DbContext;
         private readonly Config Config;
+        private FFMPEGHelper ffmpegHelper;
 
-        public VideosController(ApplicationDbContext applicationDbContext, Config config)
+        public VideosController(ApplicationDbContext applicationDbContext, Config config, FFMPEGHelper _ffmpegHelper)
         {
             DbContext = applicationDbContext;
             Config = config;
+            ffmpegHelper = _ffmpegHelper;
         }
 
         public IActionResult Index()
@@ -29,6 +32,7 @@ namespace Gombka.pl.Controllers
             return Json("tu wszytskie filmy");
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Upload()
         {
@@ -37,6 +41,7 @@ namespace Gombka.pl.Controllers
             return View(viewModel);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Upload(VideoEntity video, IFormFile file)
         {
@@ -60,16 +65,24 @@ namespace Gombka.pl.Controllers
 
             var fileName = Path.GetRandomFileName();
             var filePath = Path.Combine(Config.Parsed["Videos:StoredFilesPath"], fileName);
+
             using (var stream = System.IO.File.Create(filePath))
             {
                 file.CopyTo(stream);
             }
 
+            ffmpegHelper.CreateThumbnailFromVideo(filePath, fileName);
+
             video.UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            video.UploadedAt = DateTime.Now;
             video.FileName = fileName;
             video.MimeType = file.ContentType;
+            video.ThumbnailFileName = fileName;
+
             DbContext.Videos.Add(video);
             DbContext.SaveChanges();
+
+
             return RedirectToAction("Watch", new { id = video.Id });
         }
 
