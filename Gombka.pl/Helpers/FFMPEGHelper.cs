@@ -58,7 +58,6 @@ namespace Gombka.pl.Helpers
             path.Append(GetOutputSize(thumbnailWidth, thumbnailHeight));
             path.Append(GetThumbnailFromSecond());
             path.Append(ProvideOutputFilename(thumbnailFilename));
-            //string path = $"/C {Config.FFMPEGExecutablePath} -i {videoPath} -vframes 1 -an -s 320x180 -ss 1 {Config.StoredThumbnailsPath + thumbnailFilename}.jpg";
 
             return path.ToString();
         }
