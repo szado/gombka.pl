@@ -7,7 +7,7 @@ namespace Gombka.pl.Helpers
 {
     public class FFMPEGHelper
     {
-        public const string THUMB_EXT = "webp";
+        public const string THUMB_EXT = ".webp";
         public const string THUMB_MIME_TYPE = "image/webp";
 
         private readonly Config Config;
@@ -94,7 +94,13 @@ namespace Gombka.pl.Helpers
 
         public string ProvideOutputFilename(string fileName)
         {
-            return $"{Config.StoredThumbnailsPath + fileName}.{THUMB_EXT}";
+            StringBuilder name = new StringBuilder();
+            name
+                .Append(Config.StoredThumbnailsPath)
+                .Append(fileName)
+                .Append(THUMB_EXT);
+
+            return name.ToString();
         }
     }
 }
