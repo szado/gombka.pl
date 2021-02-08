@@ -1,0 +1,25 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Gombka.pl.Models.WatchViewModel
+
+<video 
+    src='/videos/stream/@Model.Video.Id' 
+    controls='controls' 
+    poster='/videos/thumbnail/@Model.Video.Id'>
+</video>
+
+<button 
+    id="thumb-up-button"
+    @(Model.VoteEntity != null && Model.VoteEntity.Type == Gombka.pl.Models.Entities.VoteTypes.Positive ? "disabled" : "")
+>
+    👍
+</button>
+<button
+    id="thumb-down-button"
+    @(Model.VoteEntity != null && Model.VoteEntity.Type == Gombka.pl.Models.Entities.VoteTypes.Negative ? "disabled" : "")>
+    👎
+</button>
