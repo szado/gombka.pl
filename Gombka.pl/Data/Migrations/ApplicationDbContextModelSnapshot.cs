@@ -56,6 +56,9 @@ namespace Gombka.pl.Data.Migrations
                     b.Property<string>("ThumbnailFileName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ThumbnailMimeType")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 

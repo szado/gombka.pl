@@ -21,5 +21,6 @@ namespace Gombka.pl.Models.Entities
         public string FileName { get; set; }
         public string MimeType { get; set; }
         public string ThumbnailFileName { get; set; }
+        public string ThumbnailMimeType { get; set; }
     }
 }

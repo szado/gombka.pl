@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Gombka.pl.Models;
 using System.Text;
 
@@ -10,6 +7,9 @@ namespace Gombka.pl.Helpers
 {
     public class FFMPEGHelper
     {
+        public const string THUMB_EXT = "webp";
+        public const string THUMB_MIME_TYPE = "image/webp";
+
         private readonly Config Config;
         private const int DEFAULT_WIDTH_PX = 320;
         private const int DEFAULT_HEIGHT_PX = 180;
@@ -92,9 +92,9 @@ namespace Gombka.pl.Helpers
             return $"-ss {second} ";
         }
 
-        private string ProvideOutputFilename(string fileName)
+        public string ProvideOutputFilename(string fileName)
         {
-            return $"{Config.StoredThumbnailsPath + fileName}";
+            return $"{Config.StoredThumbnailsPath + fileName}.{THUMB_EXT}";
         }
     }
 }

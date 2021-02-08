@@ -77,18 +77,18 @@ namespace Gombka.pl.Controllers
             video.UploadedAt = DateTime.Now;
             video.FileName = fileName;
             video.MimeType = file.ContentType;
-            video.ThumbnailFileName = fileName;
+            video.ThumbnailFileName = ffmpegHelper.ProvideOutputFilename(fileName);
+            video.ThumbnailMimeType = FFMPEGHelper.THUMB_MIME_TYPE;
 
             DbContext.Videos.Add(video);
             DbContext.SaveChanges();
-
 
             return RedirectToAction("Watch", new { id = video.Id });
         }
 
         public IActionResult Watch(int id)
         {
-            return Content($"<video src='/videos/stream/{id}' controls='controls'></video>", "text/html");
+            return Content($"<video src='/videos/stream/{id}' controls='controls' poster='/videos/thumbnail/{id}'></video>", "text/html");
         }
 
         public IActionResult Stream(int id)
@@ -102,6 +102,19 @@ namespace Gombka.pl.Controllers
 
             var filePath = Path.Combine(Config.Parsed["Videos:StoredFilesPath"], video.FileName);
             return PhysicalFile(filePath, video.MimeType);
+        }
+
+        public IActionResult Thumbnail(int id)
+        {
+            var video = DbContext.Videos.Find(id);
+
+            if (video == null)
+            {
+                return NotFound();
+            }
+
+            var filePath = Path.Combine(Config.Parsed["Videos:StoredThumbnailsPath"], video.ThumbnailFileName);
+            return PhysicalFile(filePath, video.ThumbnailMimeType);
         }
     }
 }
