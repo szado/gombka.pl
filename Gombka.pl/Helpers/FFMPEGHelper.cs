@@ -94,7 +94,7 @@ namespace Gombka.pl.Helpers
 
         private string ProvideOutputFilename(string fileName)
         {
-            return $"{Config.StoredThumbnailsPath + fileName}.jpg";
+            return $"{Config.StoredThumbnailsPath + fileName}";
         }
     }
 }
