@@ -6,20 +6,39 @@
 
 @model Gombka.pl.Models.WatchViewModel
 
-<video 
-    src='/videos/stream/@Model.Video.Id' 
-    controls='controls' 
-    poster='/videos/thumbnail/@Model.Video.Id'>
+<video src='/videos/stream/@Model.Video.Id'
+       controls='controls'
+       poster='/videos/thumbnail/@Model.Video.Id'>
 </video>
 
-<button 
-    id="thumb-up-button"
-    @(Model.VoteEntity != null && Model.VoteEntity.Type == Gombka.pl.Models.Entities.VoteTypes.Positive ? "disabled" : "")
->
-    👍
-</button>
-<button
-    id="thumb-down-button"
-    @(Model.VoteEntity != null && Model.VoteEntity.Type == Gombka.pl.Models.Entities.VoteTypes.Negative ? "disabled" : "")>
-    👎
-</button>
+<input type="hidden" id="video-id-input" value="@Model.Video.Id">
+
+<div>
+    <button id="thumb-up-button"
+            @(Model.VoteEntity != null && Model.VoteEntity.Type == Gombka.pl.Models.Entities.VoteTypes.Positive ? "disabled" : "")>
+        👍
+    </button>
+    <button id="thumb-down-button"
+            @(Model.VoteEntity != null && Model.VoteEntity.Type == Gombka.pl.Models.Entities.VoteTypes.Negative ? "disabled" : "")>
+        👎
+    </button>
+</div>
+
+@if (Model.Video.Votes == null)
+{
+    <div>Nikt jeszcze nie ocenił tego wideo. Bądź pierwszy!</div>
+}
+else if (Model.TypeOfVoteMajority == Gombka.pl.Models.Entities.VoteTypes.Positive)
+{
+    <div>
+        Wideo polecane przez @Model.PositiveVotesPercentage% użytkowników.
+        <a title="@Model.Video.Votes.Count wszystkich ocen">❓</a>
+    </div>
+}
+else
+{
+    <div>
+        Wideo niepolecane przez @(100 - Model.PositiveVotesPercentage)% użytkowników.
+        <a title="@Model.Video.Votes.Count wszystkich ocen">❓</a>
+    </div>
+}

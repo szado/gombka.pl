@@ -15,7 +15,7 @@ namespace Gombka.pl.Models.Entities
     public class VoteEntity
     {
         public int Id { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public IdentityUser User { get; set; }
         public int VideoId { get; set; }
         public VideoEntity Video { get; set; }

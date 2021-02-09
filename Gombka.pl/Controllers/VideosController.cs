@@ -73,7 +73,7 @@ namespace Gombka.pl.Controllers
 
             ffmpegHelper.CreateThumbnailFromVideo(filePath, fileName);
 
-            video.UserId = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            video.UserId = LoggedUserId;
             video.UploadedAt = DateTime.Now;
             video.FileName = fileName;
             video.MimeType = file.ContentType;
@@ -88,7 +88,30 @@ namespace Gombka.pl.Controllers
 
         public IActionResult Watch(int id)
         {
-            return Content($"<video src='/videos/stream/{id}' controls='controls' poster='/videos/thumbnail/{id}'></video>", "text/html");
+            var video = DbContext.Videos.Find(id);
+
+            if (video == null)
+            {
+                return NotFound();
+            }
+
+            VoteEntity? vote;
+
+            try
+            {
+                vote = LoggedUserId == null ? 
+                    null : 
+                    DbContext.Votes.Where(x => x.UserId == LoggedUserId && x.VideoId == video.Id).Single();
+            } 
+            catch(Exception)
+            {
+                vote = null;
+            }
+            
+            return View(new WatchViewModel() { 
+                Video = video,
+                VoteEntity = vote
+            });
         }
 
         public IActionResult Stream(int id)
@@ -100,8 +123,15 @@ namespace Gombka.pl.Controllers
                 return NotFound();
             }
 
-            var filePath = Path.Combine(Config.Parsed["Videos:StoredFilesPath"], video.FileName);
-            return PhysicalFile(filePath, video.MimeType);
+            try
+            {
+                var filePath = Path.Combine(Config.Parsed["Videos:StoredFilesPath"], video.FileName);
+                return PhysicalFile(filePath, video.MimeType);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
         }
 
         public IActionResult Thumbnail(int id)
@@ -113,8 +143,14 @@ namespace Gombka.pl.Controllers
                 return NotFound();
             }
 
-            var filePath = Path.Combine(Config.Parsed["Videos:StoredThumbnailsPath"], video.ThumbnailFileName);
-            return PhysicalFile(filePath, video.ThumbnailMimeType);
+            try
+            {
+                var filePath = Path.Combine(Config.Parsed["Videos:StoredThumbnailsPath"], video.ThumbnailFileName);
+                return PhysicalFile(filePath, video.ThumbnailMimeType);
+            } catch (Exception)
+            {
+                return NotFound();
+            }
         }
 
         public IActionResult Search(string query)
@@ -130,5 +166,46 @@ namespace Gombka.pl.Controllers
 
             return View(videos);
         }
+
+        [HttpPut]
+        [Authorize]
+        public IActionResult Vote([FromBody] VoteEntity newVote)
+        {
+            if (newVote == null || newVote.VideoId == 0)
+            {
+                return BadRequest();
+            }
+
+            var existingVote = DbContext
+                .Votes
+                .Where(vote => vote.UserId == LoggedUserId && vote.VideoId == newVote.VideoId)
+                .FirstOrDefault();
+
+            if (existingVote != null)
+            {
+                DbContext.Votes.Remove(existingVote);
+            }
+
+            newVote.UserId = LoggedUserId;
+            DbContext.Add(newVote);
+            DbContext.SaveChanges();
+
+            return Ok();
+        }
+
+        private string? LoggedUserId
+        {
+            get
+            {
+                try
+                {
+                    return HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        } 
     }
 }
