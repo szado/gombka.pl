@@ -199,9 +199,10 @@ namespace Gombka.pl.Controllers
             {
                 try
                 {
-                    return HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                    var user = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
+                    return user == null ? null : user.Value;
                 }
-                catch (Exception)
+                catch
                 {
                     return null;
                 }

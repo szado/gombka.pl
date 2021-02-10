@@ -34,11 +34,12 @@
             })
                 .then(response => {
                     if (!response.ok) {
-                        alert('Błąd przy zapisie głosu!');
+                        const message = response.status === 400 ?
+                            'Tylko zalogowani użytkownicy mogą oceniać wideo.' :
+                            'Nieoczekiwany błąd przy zapisie głosu.'
+                        alert(message);
                         return;
                     }
-
-                    console.log(this === downButton, this === upButton, this)
                     downButton.disabled = this === downButton;
                     upButton.disabled = this === upButton;
                 });
