@@ -2,16 +2,28 @@
     ViewData["Title"] = "Home Page";
 }
 
-<section id="index-results" class="videos-default">
+<section id="index-results" class="videos-grid">
     @if (Model.Count > 0)
     {
         @foreach (var video in Model)
         {
-            <div>
-                <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
-                    <img src="/videos/thumbnail/@video.Id" />
-                    <strong>@video.Title</strong>
-                </a>
+            <div class="video-item">
+                <div class="video-thumbnail">
+                    <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
+                        <img src="/videos/thumbnail/@video.Id" />
+                    </a>
+                </div>
+                <div class="video-info">
+                    <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
+                        <div class="video-title">
+                            <strong>@video.Title</strong>
+                        </div>
+                    </a>
+                    <div class="video-additional-info">
+                        <small>@video.Votes.</small>
+                        <small>@video.User.UserName</small>
+                    </div>
+                </div>
             </div>
         }
     }

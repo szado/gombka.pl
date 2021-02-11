@@ -4,15 +4,21 @@
 @{
 }
 
-<section id="search-results" class="videos-default">
+<section id="search-results" class="videos-grid">
     @if (Model.Count > 0)
     {
         @foreach (var video in Model)
         {
-            <div>
+            <div class="video-item">
                 <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
-                    <img src="/videos/thumbnail/@video.Id" />
-                    <strong>@video.Title</strong>
+                    <div class="video-thumbnail">
+                        <img src="/videos/thumbnail/@video.Id" />
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">
+                            <strong>@video.Title</strong>
+                        </div>
+                    </div>
                 </a>
             </div>
         }

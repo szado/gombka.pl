@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Gombka.pl.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Gombka.pl.Controllers
 {
@@ -24,6 +25,8 @@ namespace Gombka.pl.Controllers
         public IActionResult Index()
         {
             var videos = DbContext.Videos
+                .Include(x => x.User)
+                .Include(x => x.Votes)
                 .OrderByDescending(x => x.UploadedAt)
                 .Take(10)
                 .ToList();
