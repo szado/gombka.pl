@@ -18,7 +18,7 @@ namespace Gombka.pl.Controllers
             DbContext = dbContext;
         }
 
-        [Route("/channel/{id}")]
+        [Route("/channel/{userId}")]
         public IActionResult Index(string userId)
         {
             if (userId == null)
