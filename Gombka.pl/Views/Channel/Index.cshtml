@@ -1,3 +1,20 @@
 ﻿@model Gombka.pl.Models.ChannelViewModel
 
-@Model.User.UserName
+<h3>Kanał użytkownika @Model.User.UserName</h3>
+
+
+@if (Model.Videos.Count() > 0)
+{
+    <section class="user-videos">
+    @foreach (var video in Model.Videos)
+    {
+        <div class="video-item">
+            <p>@video.Title</p>
+        </div>
+    }
+    </section>
+} 
+else
+{
+    <p>Ten kanał aktualnie nie posiada filmów wideo</p>
+}
