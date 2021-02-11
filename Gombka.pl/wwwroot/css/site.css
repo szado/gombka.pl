@@ -27,7 +27,7 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
   html {
@@ -59,9 +59,17 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background-image: url(../img/bg.png);
+    font-family: "Open Sans", Arial;
 }
+
+h1, h2, h3, h4, h5, h5 {
+    font-family: "Anton", Impact;
+    text-transform: uppercase;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -73,4 +81,22 @@ body {
 /* Video voting */
 #thumb-up-button:disabled, #thumb-down-button:disabled {
     background-color: #FFD800;
+}
+
+.w-35 {
+    width: 35% !important;
+}
+
+.bg-dark {
+    background-color: #000000 !important;
+}
+
+/* navigation */
+.nav-link {
+    color: #fff;
+}
+
+.nav-item {
+    font-family: "Anton", Impact;
+    text-transform: uppercase;
 }
