@@ -91,6 +91,10 @@ h1, h2, h3, h4, h5, h5 {
     background-color: #000000 !important;
 }
 
+.bg-primary {
+    background-color: #FFD700 !important;
+}
+
 /* navigation */
 .nav-link {
     color: #fff;

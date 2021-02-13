@@ -1,0 +1,34 @@
+﻿section.welcome {
+    font-family: "Anton", Impact;
+    background-image: url(../img//emot.png);
+    height: 80px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: 80% -10px;
+    padding-left: 20%;
+    font-size: 20px;
+    padding-top: 10px;
+    margin: 0 -15px;
+
+    @media(max-width: 1200px) {
+        font-size: 18px;
+    }
+
+    @media(max-width: 992px) {
+        font-size: 15px;
+        height: 60px;
+        background-size: 80px;
+        background-position: 90% -10px;
+        padding-left: 10%;
+        padding-top: 8px;
+    }
+
+    @media(max-width: 576px) {
+        font-size: 11px;
+        height: 50px;
+        background-size: 70px;
+        background-position: 100% -5px;
+        padding-left: 0;
+        padding-top: 5px;
+    }
+}

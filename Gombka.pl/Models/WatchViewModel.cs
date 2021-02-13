@@ -10,11 +10,12 @@ namespace Gombka.pl.Models
     {
         public VideoEntity Video { get; set; }
         public VoteEntity? VoteEntity { get; set; }
+        public List<VideoEntity> RecommendedVideos { get; set; }
         public int PositiveVotesPercentage
         {
             get
             {
-                if (Video.Votes == null)
+                if (Video.Votes == null || Video.Votes.Count == 0)
                 {
                     return 0;
                 }
@@ -26,7 +27,7 @@ namespace Gombka.pl.Models
         {
             get
             {
-                if (Video.Votes == null)
+                if (Video.Votes == null || Video.Votes.Count == 0)
                 {
                     return null;
                 }
@@ -38,7 +39,7 @@ namespace Gombka.pl.Models
         {
             get
             {
-                if (Video.Votes == null)
+                if (Video.Votes == null || Video.Votes.Count == 0)
                 {
                     return 0;
                 }
@@ -50,7 +51,7 @@ namespace Gombka.pl.Models
         {
             get
             {
-                if (Video.Votes == null)
+                if (Video.Votes == null || Video.Votes.Count == 0)
                 {
                     return 0;
                 }
