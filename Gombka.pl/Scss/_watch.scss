@@ -1,3 +1,11 @@
 ﻿video.player {
     width: 100%;
 }
+
+#thumb-up-button:disabled, #thumb-down-button:disabled {
+    background-color: #FFD800;
+}
+
+#voting {
+    text-align: right;
+}
