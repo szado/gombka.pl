@@ -27,7 +27,7 @@
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     <form asp-action="Search" asp-controller="Videos" method="get" id="search-form">
-                                        <input name="query" id="query-search" value="@Context.Request.Query["query"]" />
+                                        <input name="query" placeholder="Wyszukaj wideo..." id="query-search" value="@Context.Request.Query["query"]" />
                                         <button id="search-btn" class="mt-1">🔍</button>
                                     </form>
                                 </li>

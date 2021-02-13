@@ -9,7 +9,21 @@
     @foreach (var video in Model.Videos)
     {
         <div class="video-item">
-            <p>@video.Title</p>
+            <div class="video-thumbnail">
+                <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
+                    <img src="/videos/thumbnail/@video.Id" />
+                </a>
+            </div>
+            <div class="video-info">
+                <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
+                    <div class="video-title">
+                        <strong>@video.Title</strong>
+                    </div>
+                </a>
+                <div class="video-description">
+                    <p>@video.Description</p>
+                </div>
+            </div>
         </div>
     }
     </section>

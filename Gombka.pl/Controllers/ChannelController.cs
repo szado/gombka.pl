@@ -35,7 +35,8 @@ namespace Gombka.pl.Controllers
 
             var videos = DbContext.Videos
                 .Include(x => User)
-                .Where(x => x.User.Id == userId);
+                .Where(x => x.User.Id == userId)
+                .OrderByDescending(x => x.UploadedAt);
 
             return View(new ChannelViewModel() {
                 Videos = videos,

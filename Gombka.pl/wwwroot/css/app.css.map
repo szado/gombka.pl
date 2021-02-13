@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,mBAAoB,CAChB,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,cAAc,CACrC,QAAQ,CAAE,IAAI,CAEd,yBAA0B,CAL9B,mBAAoB,CAMZ,qBAAqB,CAAE,6BAA6B,EAGxD,yBAAyB,CAT7B,mBAAoB,CAUZ,qBAAqB,CAAE,6BAA6B,EAGxD,yBAA0B,CAb9B,mBAAoB,CAcZ,qBAAqB,CAAE,6BAA6B,EAKhD,oDAAI,CACA,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CClBhB,8DAAkB,CACd,gBAAgB,CCJvB,OAAO,CDYR,qCAAgB,CACZ,KAAK,CCbR,OAAO",
-"sources": ["../../Scss/_videos-grid.scss","../../Scss/_navigation-override.scss","../../Scss/_variables.scss"],
+"mappings": "AAGY,8DAAkB,CACd,gBAAgB,CCJvB,OAAO,CDYR,qCAAgB,CACZ,KAAK,CCbR,OAAO,CCAhB,mBAAoB,CAChB,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,cAAc,CACrC,QAAQ,CAAE,IAAI,CAEd,yBAA0B,CAL9B,mBAAoB,CAMZ,qBAAqB,CAAE,6BAA6B,EAGxD,yBAAyB,CAT7B,mBAAoB,CAUZ,qBAAqB,CAAE,6BAA6B,EAGxD,yBAA0B,CAb9B,mBAAoB,CAcZ,qBAAqB,CAAE,6BAA6B,EAKhD,oDAAI,CACA,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CCpBxB,+BAAY,CACR,OAAO,CAAE,IAAI,CACb,aAAa,CAAE,IAAI,CAEnB,2CAAY,CACR,WAAW,CAAE,IAAI",
+"sources": ["../../Scss/_navigation-override.scss","../../Scss/_variables.scss","../../Scss/_videos-grid.scss","../../Scss/_user-videos.scss"],
 "names": [],
 "file": "app.css"
 }

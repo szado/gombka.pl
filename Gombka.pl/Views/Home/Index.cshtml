@@ -14,14 +14,17 @@
                     </a>
                 </div>
                 <div class="video-info">
-                    <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
-                        <div class="video-title">
-                            <strong>@video.Title</strong>
-                        </div>
-                    </a>
+                    <div class="title-wrapper">
+                        <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
+                            <div class="video-title">
+                                <strong>@video.Title</strong>
+                            </div>
+                        </a>
+                    </div>
                     <div class="video-additional-info">
-                        <small><a href="/channel/@video.User.Id">
-                            @video.User.UserName
+                        <small>
+                            <a href="/channel/@video.User.Id">
+                                @video.User.UserName
                             </a>
                         </small>
                     </div>
