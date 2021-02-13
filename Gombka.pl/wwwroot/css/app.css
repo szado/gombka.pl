@@ -1,3 +1,9 @@
+.nav .nav-item .nav-link.active, .nav .nav-item .nav-link:hover {
+  background-color: #E0D401; }
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #E0D401; }
+
 section.videos-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -14,6 +20,12 @@ section.videos-grid {
   section.videos-grid .video-item .video-thumbnail img {
     width: 100%;
     height: auto; }
+
+section.user-videos .video-item {
+  display: flex;
+  margin-bottom: 20px; }
+  section.user-videos .video-item .video-info {
+    margin-left: 15px; }
 
 section.welcome {
   font-family: "Anton", Impact;
@@ -45,12 +57,6 @@ section.welcome {
       background-position: 100% -5px;
       padding-left: 0;
       padding-top: 5px; } }
-
-.nav .nav-item .nav-link.active, .nav .nav-item .nav-link:hover {
-  background-color: #E0D401; }
-
-.navbar-nav .nav-item .nav-link:hover {
-  color: #E0D401; }
 
 video.player {
   width: 100%; }
