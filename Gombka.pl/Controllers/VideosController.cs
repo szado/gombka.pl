@@ -11,6 +11,7 @@ using System.Security.Claims;
 using System.IO;
 using Gombka.pl.Helpers;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
 
 namespace Gombka.pl.Controllers
 {
@@ -161,6 +162,7 @@ namespace Gombka.pl.Controllers
             }
 
             var videos = DbContext.Videos
+                .Include(x => x.User)
                 .Where(x => x.Title.Contains(query))
                 .ToList();
 

@@ -1,0 +1,17 @@
+﻿.nav {
+    .nav-item {
+        .nav-link {
+            &.active, &:hover {
+                background-color: $yellow;
+            }
+        }
+    }
+}
+
+.navbar-nav {
+    .nav-item {
+        .nav-link:hover {
+            color: $yellow;
+        }
+    }
+}
