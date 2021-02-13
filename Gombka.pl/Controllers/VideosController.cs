@@ -108,10 +108,16 @@ namespace Gombka.pl.Controllers
             {
                 vote = null;
             }
-            
-            return View(new WatchViewModel() { 
+
+            return View(new WatchViewModel()
+            {
                 Video = video,
-                VoteEntity = vote
+                VoteEntity = vote,
+                RecommendedVideos = DbContext.Videos
+                    .Include(x => x.User)
+                    .Include(x => x.Votes)
+                    .OrderByDescending(x => x.Votes.Count)
+                    .ToList()
             });
         }
 
