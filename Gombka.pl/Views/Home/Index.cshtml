@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<section id="index-results" class="videos-grid">
+<section class="welcome bg-primary">
+    Witaj na Gombce - jedynym niezależnym portalu wymiany treści wideo.<br>
+    Zarejestruj się by przesłać filmik i udostępnić go światu!
+</section>
+<section id="index-results" class="videos-grid pt-3">
     @if (Model.Count > 0)
     {
         @foreach (var video in Model)
@@ -20,8 +23,9 @@
                         </div>
                     </a>
                     <div class="video-additional-info">
-                        <small><a href="/channel/@video.User.Id">
-                            @video.User.UserName
+                        <small>
+                            <a href="/channel/@video.User.Id">
+                                @video.User.UserName
                             </a>
                         </small>
                     </div>
