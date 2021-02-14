@@ -44,6 +44,7 @@ namespace Gombka.pl.Controllers
 
         [Authorize]
         [HttpPost]
+        [DisableRequestSizeLimit]
         public IActionResult Upload(VideoEntity video, IFormFile file)
         {
             if (file == null)
