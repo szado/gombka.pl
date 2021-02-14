@@ -1,0 +1,9 @@
+﻿.most-popular-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .video-item {
+        margin-bottom: 20px;
+    }
+}

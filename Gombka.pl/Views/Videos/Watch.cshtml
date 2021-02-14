@@ -48,13 +48,29 @@
         <blockquote class="blockquote">@Model.Video.Description</blockquote>
     </div>
     <div class="col-sm-12 col-md-3 col-lg-4">
-        <h3>Najpopularniejsze</h3>
+        <h3 class="text-center">Najpopularniejsze</h3>
         @if (Model.RecommendedVideos.Count > 0)
         {
-            @foreach (var video in Model.RecommendedVideos)
-            {
-                @video.Title<br>
+        <div class="most-popular-videos">
+        @foreach (var video in Model.RecommendedVideos)
+        {<div class="video-item">
+                <div class="video-thumbnail">
+                    <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
+                        <img src="/videos/thumbnail/@video.Id" />
+                    </a>
+                </div>
+                <div class="video-info">
+                    <div class="title-wrapper">
+                        <a asp-controller="Videos" asp-action="Watch" asp-route-id="@video.Id">
+                            <div class="video-title">
+                                <strong>@video.Title</strong>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
             }
+        </div>
         }
     </div>
 </div>
