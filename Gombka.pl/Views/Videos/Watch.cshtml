@@ -14,7 +14,7 @@
         <video class="player" src='/videos/stream/@Model.Video.Id' controls='controls' poster='/videos/thumbnail/@Model.Video.Id'></video>
         <input type="hidden" id="video-id-input" value="@Model.Video.Id">
         <h3>@Model.Video.Title</h3>
-        <h6>Przesłane przez @Model.Video.User.Email, dnia @Model.Video.UploadedAt</h6>
+        <h6>Przesłane przez <a href="/channel/@Model.Video.UserId">@Model.Video.User.Email</a>, dnia @Model.Video.UploadedAt</h6>
         <div id="voting">
             <div>
                 <button id="thumb-up-button"
