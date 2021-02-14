@@ -20,7 +20,7 @@ namespace Gombka.pl.Models
                     return 0;
                 }
 
-                return Convert.ToInt32(PositiveVotesCount / Video.Votes.Count * 100);
+                return Convert.ToInt32(Decimal.Divide(PositiveVotesCount, Video.Votes.Count) * 100);
             }
         }
         public VoteTypes? TypeOfVoteMajority
