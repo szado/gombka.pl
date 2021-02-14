@@ -4,31 +4,42 @@
 @{
 }
 
+@{
+    ViewData["Title"] = "Nowe wideo";
+}
+
 @model Gombka.pl.Models.UploadViewModel
 
-<strong>@ViewData["message"]</strong>
+<div class="container pt-3">
+    <h1>Dodaj nowe wideo</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <strong>@ViewData["message"]</strong>
 
-<form asp-controller="Videos" asp-action="Upload" method="post" enctype="multipart/form-data">
-    <div>
-        Tytuł filmu:
-        <input type="text" name="Title" />
+            <form asp-controller="Videos" asp-action="Upload" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="Title_Input">Tytuł filmu:</label>
+                    <input id="Title_Input" type="text" name="Title" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="Description_Input">Opis filmu:</label>
+                    <textarea id="Description_Input" name="Description" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Category_Input">Kategoria:</label>
+                    <select name="CategoryId" id="Category_Input" class="form-control">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="File_Input">Wybierz plik:</label>
+                    <input type="file" name="File" id="File_Input" class="form-control">
+                </div>
+                <button class="btn btn-primary" type="submit">Dodaj film</button>
+            </form>
+        </div>
     </div>
-    <div>
-        Opis filmu:
-        <textarea name="Description"></textarea>
-    </div>
-    <div>
-        Kategoria:
-        <select name="CategoryId">
-            @foreach (var category in Model.Categories)
-            {
-                <option value="@category.Id">@category.Name</option>
-            }
-        </select>
-    </div>
-    <div>
-        Wybierz plik:
-        <input type="file" name="File">
-    </div>
-    <button type="submit">Dodaj film</button>
-</form>
+</div>
