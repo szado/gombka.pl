@@ -26,7 +26,7 @@
                     👎
                 </button>
             </div>
-            @if (Model.Video.Votes == null)
+            @if (Model.Video.Votes.Count == 0)
             {
                 <div>Nikt jeszcze nie ocenił tego wideo. Bądź pierwszy!</div>
             }
