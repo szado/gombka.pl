@@ -25,4 +25,4 @@ Wszystkie chcą posiadać jak największą liczbę funkcjonalności oraz udogodn
 * Posiada podstronę, na której znajdują się wszelakie artykuły dotyczące różnych dziedzin, np Finanse, Medycyna, Sprzęt, Technologia
 
 **maxior.pl**
-* Serwis umożliwiający dzielenie się plikami wideo
+* Serwis umożliwiający dzielenie się wyłącznie plikami wideo
