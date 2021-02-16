@@ -10,6 +10,7 @@ Wszystkie chcą posiadać jak największą liczbę funkcjonalności oraz udogodn
 * Najwiekszym konkurentem na arenie międzynarodowej jest serwis **YouTube**, posiadający ogromną bazę danych filmów wideo, która codziennie jest wzbogacana o kilkanaście lub kilkadziesiąt tysięcy filmów przez użytkowników z całego świata.
 * Serwis posiada opcję wykupienia pakietu Premium, który niweluje reklamy na oglądanych filmach oraz w obrębie całej aplikacji
 * Umożliwia śledzenie interesujących nas wątków
+* Na rynku od dawna
 * Dodatkową opcją serwisu jest funkcja Youtube Music, która pozwala na odtwarzanie muzyki na podobnej zasadzie co Spotify
 * Edytor wideo
 * Możliwość wykupienia dostępu do pełnometrażowych filmów
@@ -48,7 +49,7 @@ Dla aplikacji, która dopiero chce zaistnieć szansą jest wybicie się na rynku
 
 Strengths | Weaknesses | Opportunities | Threats |
 --- | --- | --- | --- |
-Niezależny system, pozwalający na wrzucanie wideo dostosowanych do prawa polskiego (lub międzynarodowego w przypadku ekspansji) | Na początku mała ilość funkcjonalności | - | - |
+Niezależny system, pozwalający na wrzucanie wideo dostosowanych do prawa polskiego (lub międzynarodowego w przypadku ekspansji) | Na początku mała ilość funkcjonalności | W trakcie pandemii ludzie szukają nowości | Brak zainteresowania na rzecz bardziej rozpoznawalnych serwisów |
 Możliwość dobrania najnowyszch technologii | Niski budżet | - | - |
 Własna marka | Brak reklamy | - | - |
 Nie ma potrzeby wynajmowania biura do pracy | Mały zespół | - | - |
