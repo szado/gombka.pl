@@ -7,6 +7,7 @@
 * Dodatkową opcją serwisu jest funkcja Youtube Music, która pozwala na odtwarzanie muzyki na podobnej zasadzie co Spotify
 * Możliwość wykupienia dostępu do pełnometrażowych filmów
 * Prosta i czytelna szata graficzna
+
 **CDA** <br>
 * W Polsce jednym z wiekszych konkurentów okazuje się serwis **CDA**, zawierający w swojej ofercie filmy wideo, które można oglądać bezpłatnie, natomiast niektóre z nich udostępnione są dla użytkownikow w formie abonamentu (głównie filmy długometrażowe objęte licencją).
 * 
