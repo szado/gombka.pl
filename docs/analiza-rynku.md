@@ -49,7 +49,7 @@ Dla aplikacji, która dopiero chce zaistnieć szansą jest wybicie się na rynku
 
 Strengths | Weaknesses | Opportunities | Threats |
 --- | --- | --- | --- |
-Niezależny system, pozwalający na wrzucanie wideo dostosowanych do prawa polskiego (lub międzynarodowego w przypadku ekspansji) | Na początku mała ilość funkcjonalności | W trakcie pandemii ludzie szukają nowości | Brak zainteresowania na rzecz bardziej rozpoznawalnych serwisów |
-Możliwość dobrania najnowyszch technologii | Niski budżet | - | - |
-Własna marka | Brak reklamy | - | - |
+Zgrany zespół | Na początku mała ilość funkcjonalności | W trakcie pandemii ludzie szukają nowości | Brak zainteresowania na rzecz bardziej rozpoznawalnych serwisów |
+Niskie koszty | Niski budżet | Niezależny system, pozwalający na wrzucanie każdego wideo (w obrębie prawa) | Rosnące ceny za usługi sieciowe (serwery, rozwiązania chmurowe itp.) |
+Własna marka | Brak reklamy | Możliwość dobrania najnowyszch technologii | - |
 Nie ma potrzeby wynajmowania biura do pracy | Mały zespół | - | - |
