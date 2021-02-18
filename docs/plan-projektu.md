@@ -1,5 +1,9 @@
 # Plan projektu portalu wideo "Gombka.pl"
 
+## Cel projektu
+
+Stworzenie portalu umożliwiającego dzielenie się dowolnymi treściami wideo, o których popularniści w serwisie decydują użytkownicy oraz które nie są obarczone sankcjami prawnymi na polu międzynarodowym.
+
 ## Zadania
 
 |Nazwa zadania|Data rozpoczęcia|Data zakończenia|Osoby|
