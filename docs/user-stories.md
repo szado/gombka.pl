@@ -1,4 +1,4 @@
-# User story
+# User stories
 * Jako użytkownik chcę mieć możliwość oglądania filmów wideo na stronie, aby dostarczyć sobie rozrywki.
 * Jako użytkownik chcę mieć możliwość posiadania własnego konta, abym mógł chwalić się swoimi filmami pod moim imieniem.
 * Jako użytkownik chcę dodawać filmy na stronę, aby inni również mogli je oglądać.
