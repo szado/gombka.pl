@@ -27,10 +27,10 @@ f) Użytkownik loguje się na swoje konto poprawnymi danymi
 
 ### Nazwa: Dodaj swój nowy film
 **Inicjator:** Użytkownik<br>
-**Cel:** Dodać oraz obejrzeć swój nowo dodany film
+**Cel:** Dodać oraz obejrzeć swój nowo dodany film<br>
 **Główny scenariusz:**
 1. Zalogowany użytkownik przechodzi na podstronę, która umożliwia wrzucenie filmu wideo
-2. Użytkownik wypełnia formularz dotyczący informacji na temat jego filmu (kategoria, tytuł, opis) oraz dodaje swój plik wideo.
+2. Użytkownik wypełnia formularz dotyczący informacji na temat jego filmu (kategoria, tytuł, opis) oraz dodaje swój plik wideo
 3. Aplikacja waliduje wprowadzone dane przez użytkownika
 4. Aplikacja waliduje plik wideo wprowadzony przez użytkownika
 5. Aplikacja generuje miniaturkę filmu
@@ -39,5 +39,26 @@ f) Użytkownik loguje się na swoje konto poprawnymi danymi
 8. Użytkownik odtwarza film w celu weryfikacji czy aplikacja wykonała zadanie poprawnie
 **Rozszerzenia:**
 2.1 Użytkownik podał za długi tytuł filmu
-2.2 Aplikacja zwróciła błąd i poprosiła użytkownika stosownym komunikatem o zmniejszenie długości znaków w tytule
-2.3 Użytkownik
+a) Aplikacja zwróciła błąd i poprosiła użytkownika stosownym komunikatem o zmniejszenie długości znaków w tytule
+b) Użytkownik poprawił błąd i wysłał formularz ponownie
+2.2 Użytkownik wysłał plik wideo w nieobsługiwanym formacie
+a) Aplikacja zwróciła błąd o nieobsługiwanym formacie pliku dla wideo
+b) Użytkownik wybiera poprawny plik wideo
+2.3 Użytkownik wysłał za duży plik wideo
+a) Aplikacja zwróciła błąd o zbyt dużym pliku wideo
+b) Użytkownik zmontował film, by trwał on krócej i wrzuca plik ponownie
+
+### Nazwa: Oddaj głos na film
+**Inicjator:** Użytkownik<br>
+**Cel:** Oddać głos na wybrany film<br>
+**Główny scenariusz:**
+1. Użytkownik przechodzi na podstronę z wybranym filmem
+2. Użytkownik decyduje czy dany film mu się spodobał czy też nie
+3. Użytkownik klika w wybraną przez siebie opcję
+4. Aplikacja wysyła żądanie do serwera i aktualizuje statystyki
+5. Aplikacja zwraca komunikat o poprawnym oddaniu głosu
+**Rozszerzenia:**
+3.1 Niezalogowany użytkownik wybrał opcję w głosowaniu
+a) Aplikacja zwróciła błąd i poprosiła użytkownika o zalogowanie się
+b) Użytkownik loguje się i ponownie oddaje głos
+c) Aplikacja odnotowała głos i zaktualizowała statystyki
