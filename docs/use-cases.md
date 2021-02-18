@@ -14,7 +14,7 @@
 8. Aplikacja sprawdza czy wszystkie dane formularza są prawidłowe
 9. Aplikacja przekierowywuje użytkownika na stronę główną z komunikatem o poprawnym logowaniu
 
-**Rozszerzenia:**
+**Rozszerzenia:**<br>
 2.1 Użytkownik podał błędne dane<br>
 a) Aplikacja informuje użytkownika o błędzie i prosi go o wypełnienie formularza jeszcze raz<br>
 b) Użytkownik uzupełnia formularz poprawnymi danymi i wysyła jeszcze raz<br>
@@ -39,7 +39,7 @@ f) Użytkownik loguje się na swoje konto poprawnymi danymi<br>
 7. Aplikacja przekierowywuje użytkownika na podstronę z jego nowym filmem
 8. Użytkownik odtwarza film w celu weryfikacji czy aplikacja wykonała zadanie poprawnie
 
-**Rozszerzenia:**
+**Rozszerzenia:**<br>
 2.1 Użytkownik podał za długi tytuł filmu<br>
 a) Aplikacja zwróciła błąd i poprosiła użytkownika stosownym komunikatem o zmniejszenie długości znaków w tytule<br>
 b) Użytkownik poprawił błąd i wysłał formularz ponownie<br>
@@ -60,7 +60,7 @@ b) Użytkownik zmontował film, by trwał on krócej i wrzuca plik ponownie<br>
 4. Aplikacja wysyła żądanie do serwera i aktualizuje statystyki
 5. Aplikacja zwraca komunikat o poprawnym oddaniu głosu
 
-**Rozszerzenia:**
+**Rozszerzenia:**<br>
 3.1 Niezalogowany użytkownik wybrał opcję w głosowaniu<br>
 a) Aplikacja zwróciła błąd i poprosiła użytkownika o zalogowanie się<br>
 b) Użytkownik loguje się i ponownie oddaje głos<br>
@@ -74,7 +74,7 @@ c) Aplikacja odnotowała głos i zaktualizowała statystyki<br>
 2. Aplikacja wyszukuje w bazie danych filmów, które pasują do podanego kryterium
 3. Aplikacja przekierowywuje użytkownika na podstronę z wynikami
 
-**Rozszerzenia:**
+**Rozszerzenia:**<br>
 1.1 Użytkownik podaje pustą frazę do pola wyszukiwarki<br>
 a) Wyszukiwarka nie zadziała bez wpisania frazy<br>
 b) Użytkownik uzupełnia frazę w polu wyszukiwarki i wysyła formularz jeszcze raz<br>
