@@ -13,17 +13,18 @@
 7. Aplikacja wyszukuje użytkownika w bazie danych 
 8. Aplikacja sprawdza czy wszystkie dane formularza są prawidłowe
 9. Aplikacja przekierowywuje użytkownika na stronę główną z komunikatem o poprawnym logowaniu
+
 **Rozszerzenia:**
-2.1 Użytkownik podał błędne dane
-a) Aplikacja informuje użytkownika o błędzie i prosi go o wypełnienie formularza jeszcze raz
-b) Użytkownik uzupełnia formularz poprawnymi danymi i wysyła jeszcze raz
-6.1 Użytkownik wypełnia formularz logowania błędnymi danymi
-a) Aplikacja informuje użytkownika o błędzie i prosi go o wypełnienie formularza jeszcze raz
-b) Użytkownik klika w odnośnik "przypomnij hasło"
-c) Użytkownik wypełnia formularz
-d) Aplikacja wysyła użytkownikowi link do przypomnienia hasła
-e) Użytkownik wprowadza nowe hasło
-f) Użytkownik loguje się na swoje konto poprawnymi danymi
+2.1 Użytkownik podał błędne dane<br>
+a) Aplikacja informuje użytkownika o błędzie i prosi go o wypełnienie formularza jeszcze raz<br>
+b) Użytkownik uzupełnia formularz poprawnymi danymi i wysyła jeszcze raz<br>
+6.1 Użytkownik wypełnia formularz logowania błędnymi danymi<br>
+a) Aplikacja informuje użytkownika o błędzie i prosi go o wypełnienie formularza jeszcze raz<br>
+b) Użytkownik klika w odnośnik "przypomnij hasło"<br>
+c) Użytkownik wypełnia formularz<br>
+d) Aplikacja wysyła użytkownikowi link do przypomnienia hasła<br>
+e) Użytkownik wprowadza nowe hasło<br>
+f) Użytkownik loguje się na swoje konto poprawnymi danymi<br>
 
 ### Nazwa: Dodaj swój nowy film
 **Inicjator:** Użytkownik<br>
@@ -37,16 +38,17 @@ f) Użytkownik loguje się na swoje konto poprawnymi danymi
 6. Aplikacja zapisuje dane na serwerze oraz w bazie danych
 7. Aplikacja przekierowywuje użytkownika na podstronę z jego nowym filmem
 8. Użytkownik odtwarza film w celu weryfikacji czy aplikacja wykonała zadanie poprawnie
+
 **Rozszerzenia:**
-2.1 Użytkownik podał za długi tytuł filmu
-a) Aplikacja zwróciła błąd i poprosiła użytkownika stosownym komunikatem o zmniejszenie długości znaków w tytule
-b) Użytkownik poprawił błąd i wysłał formularz ponownie
-2.2 Użytkownik wysłał plik wideo w nieobsługiwanym formacie
-a) Aplikacja zwróciła błąd o nieobsługiwanym formacie pliku dla wideo
-b) Użytkownik wybiera poprawny plik wideo
-2.3 Użytkownik wysłał za duży plik wideo
-a) Aplikacja zwróciła błąd o zbyt dużym pliku wideo
-b) Użytkownik zmontował film, by trwał on krócej i wrzuca plik ponownie
+2.1 Użytkownik podał za długi tytuł filmu<br>
+a) Aplikacja zwróciła błąd i poprosiła użytkownika stosownym komunikatem o zmniejszenie długości znaków w tytule<br>
+b) Użytkownik poprawił błąd i wysłał formularz ponownie<br>
+2.2 Użytkownik wysłał plik wideo w nieobsługiwanym formacie<br>
+a) Aplikacja zwróciła błąd o nieobsługiwanym formacie pliku dla wideo<br>
+b) Użytkownik wybiera poprawny plik wideo<br>
+2.3 Użytkownik wysłał za duży plik wideo<br>
+a) Aplikacja zwróciła błąd o zbyt dużym pliku wideo<br>
+b) Użytkownik zmontował film, by trwał on krócej i wrzuca plik ponownie<br>
 
 ### Nazwa: Oddaj głos na film
 **Inicjator:** Użytkownik<br>
@@ -57,11 +59,12 @@ b) Użytkownik zmontował film, by trwał on krócej i wrzuca plik ponownie
 3. Użytkownik klika w wybraną przez siebie opcję
 4. Aplikacja wysyła żądanie do serwera i aktualizuje statystyki
 5. Aplikacja zwraca komunikat o poprawnym oddaniu głosu
+
 **Rozszerzenia:**
-3.1 Niezalogowany użytkownik wybrał opcję w głosowaniu
-a) Aplikacja zwróciła błąd i poprosiła użytkownika o zalogowanie się
-b) Użytkownik loguje się i ponownie oddaje głos
-c) Aplikacja odnotowała głos i zaktualizowała statystyki
+3.1 Niezalogowany użytkownik wybrał opcję w głosowaniu<br>
+a) Aplikacja zwróciła błąd i poprosiła użytkownika o zalogowanie się<br>
+b) Użytkownik loguje się i ponownie oddaje głos<br>
+c) Aplikacja odnotowała głos i zaktualizowała statystyki<br>
 
 ### Nazwa: Wyszukaj film
 **Inicjator:** Użytkownik<br>
@@ -70,12 +73,13 @@ c) Aplikacja odnotowała głos i zaktualizowała statystyki
 1. Użytkownik wpisuje w pole wyszukiwarki interesującą go frazę
 2. Aplikacja wyszukuje w bazie danych filmów, które pasują do podanego kryterium
 3. Aplikacja przekierowywuje użytkownika na podstronę z wynikami
+
 **Rozszerzenia:**
-1.1 Użytkownik podaje pustą frazę do pola wyszukiwarki
-a) Wyszukiwarka nie zadziała bez wpisania frazy
-b) Użytkownik uzupełnia frazę w polu wyszukiwarki i wysyła formularz jeszcze raz
-2.1 Aplikacja nie znajduje w bazie danych żadnych wideo na podstawie podanych kryteriów
-a) Aplikacja przekierowywuje użytkownika na podstronę z wynikami ze stosownym komunikatem
-b) Użytkownik zmienia frazę
-c) Aplikacja ponownie wyszukuje dostępne wideo
+1.1 Użytkownik podaje pustą frazę do pola wyszukiwarki<br>
+a) Wyszukiwarka nie zadziała bez wpisania frazy<br>
+b) Użytkownik uzupełnia frazę w polu wyszukiwarki i wysyła formularz jeszcze raz<br>
+2.1 Aplikacja nie znajduje w bazie danych żadnych wideo na podstawie podanych kryteriów<br>
+a) Aplikacja przekierowywuje użytkownika na podstronę z wynikami ze stosownym komunikatem<br>
+b) Użytkownik zmienia frazę<br>
+c) Aplikacja ponownie wyszukuje dostępne wideo<br>
 d) Aplikacja przekierowywuje użytkownika na podstronę z wynikami
