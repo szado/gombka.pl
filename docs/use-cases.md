@@ -48,6 +48,7 @@ b) Użytkownik poprawił błąd i wysłał formularz ponownie<br>
 2.2 Użytkownik wysłał plik wideo w nieobsługiwanym formacie<br>
 a) Aplikacja zwróciła błąd o nieobsługiwanym formacie pliku dla wideo<br>
 b) Użytkownik wybiera poprawny plik wideo<br>
+
 2.3 Użytkownik wysłał za duży plik wideo<br>
 a) Aplikacja zwróciła błąd o zbyt dużym pliku wideo<br>
 b) Użytkownik zmontował film, by trwał on krócej i wrzuca plik ponownie<br>
