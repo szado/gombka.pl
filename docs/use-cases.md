@@ -62,3 +62,20 @@ b) Użytkownik zmontował film, by trwał on krócej i wrzuca plik ponownie
 a) Aplikacja zwróciła błąd i poprosiła użytkownika o zalogowanie się
 b) Użytkownik loguje się i ponownie oddaje głos
 c) Aplikacja odnotowała głos i zaktualizowała statystyki
+
+### Nazwa: Wyszukaj film
+**Inicjator:** Użytkownik<br>
+**Cel:** Wyszukac swój ulubiony film
+**Główny scenariusz:**
+1. Użytkownik wpisuje w pole wyszukiwarki interesującą go frazę
+2. Aplikacja wyszukuje w bazie danych filmów, które pasują do podanego kryterium
+3. Aplikacja przekierowywuje użytkownika na podstronę z wynikami
+**Rozszerzenia:**
+1.1 Użytkownik podaje pustą frazę do pola wyszukiwarki
+a) Wyszukiwarka nie zadziała bez wpisania frazy
+b) Użytkownik uzupełnia frazę w polu wyszukiwarki i wysyła formularz jeszcze raz
+2.1 Aplikacja nie znajduje w bazie danych żadnych wideo na podstawie podanych kryteriów
+a) Aplikacja przekierowywuje użytkownika na podstronę z wynikami ze stosownym komunikatem
+b) Użytkownik zmienia frazę
+c) Aplikacja ponownie wyszukuje dostępne wideo
+d) Aplikacja przekierowywuje użytkownika na podstronę z wynikami
