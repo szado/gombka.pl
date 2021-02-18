@@ -18,6 +18,7 @@
 2.1 Użytkownik podał błędne dane<br>
 a) Aplikacja informuje użytkownika o błędzie i prosi go o wypełnienie formularza jeszcze raz<br>
 b) Użytkownik uzupełnia formularz poprawnymi danymi i wysyła jeszcze raz<br>
+
 6.1 Użytkownik wypełnia formularz logowania błędnymi danymi<br>
 a) Aplikacja informuje użytkownika o błędzie i prosi go o wypełnienie formularza jeszcze raz<br>
 b) Użytkownik klika w odnośnik "przypomnij hasło"<br>
