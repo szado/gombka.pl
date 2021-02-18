@@ -44,6 +44,7 @@ f) Użytkownik loguje się na swoje konto poprawnymi danymi<br>
 2.1 Użytkownik podał za długi tytuł filmu<br>
 a) Aplikacja zwróciła błąd i poprosiła użytkownika stosownym komunikatem o zmniejszenie długości znaków w tytule<br>
 b) Użytkownik poprawił błąd i wysłał formularz ponownie<br>
+
 2.2 Użytkownik wysłał plik wideo w nieobsługiwanym formacie<br>
 a) Aplikacja zwróciła błąd o nieobsługiwanym formacie pliku dla wideo<br>
 b) Użytkownik wybiera poprawny plik wideo<br>
@@ -79,6 +80,7 @@ c) Aplikacja odnotowała głos i zaktualizowała statystyki<br>
 1.1 Użytkownik podaje pustą frazę do pola wyszukiwarki<br>
 a) Wyszukiwarka nie zadziała bez wpisania frazy<br>
 b) Użytkownik uzupełnia frazę w polu wyszukiwarki i wysyła formularz jeszcze raz<br>
+
 2.1 Aplikacja nie znajduje w bazie danych żadnych wideo na podstawie podanych kryteriów<br>
 a) Aplikacja przekierowywuje użytkownika na podstronę z wynikami ze stosownym komunikatem<br>
 b) Użytkownik zmienia frazę<br>
