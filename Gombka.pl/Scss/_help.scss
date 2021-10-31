@@ -1,12 +1,15 @@
-﻿details {
+﻿.help-flex-container {
+}
+
+details {
     display: block;
-    width: 300px;
-    margin: 10px 0;
+    width: 750px;
+    margin: 0 auto 5px auto;
 }
 
 summary {
     display: block;
-    background: #99B92C;
+    background: black;
     color: white;
     border-radius: 5px;
     padding: 5px;
